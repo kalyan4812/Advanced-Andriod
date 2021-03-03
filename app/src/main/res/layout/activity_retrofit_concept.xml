@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    tools:context=".RetrofitConcept">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       >
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="getConcept"
+           android:layout_gravity="center"
+           android:layout_marginTop="20sp"
+           android:text="GET CONCDEPT"
+           >
+       </Button>
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="pathConcept"
+           android:layout_gravity="center"
+           android:layout_marginTop="20sp"
+           android:text="URL MANIPULATION(@PATH,@URL)"
+           >
+       </Button>
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="queryConcept"
+           android:layout_gravity="center"
+           android:layout_marginTop="20sp"
+           android:text="QUERY CONCEPT(@QUERY)"
+           >
+       </Button>
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="postConcept"
+           android:layout_gravity="center"
+           android:layout_marginTop="20sp"
+           android:text="SENDING DATA TO SERVER (@POST)"
+           >
+       </Button>
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="updateConcept"
+           android:layout_gravity="center"
+           android:layout_marginTop="20sp"
+           android:text="UPDATE(@PUT,@PATCH)"
+           >
+       </Button>
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="deleteConcept"
+           android:layout_gravity="center"
+           android:layout_marginTop="20sp"
+           android:text="DELETE(@DELETE)"
+           >
+       </Button>
+
+        <TextView
+            android:id="@+id/text_view_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:textColor="#000" />
+   </LinearLayout>
+
+</ScrollView>

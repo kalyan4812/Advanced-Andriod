@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+<ImageView
+    android:layout_width="0dp"
+    android:layout_weight="0.5"
+    android:layout_height="100sp"
+    android:src="@mipmap/ic_launcher"
+    android:layout_marginTop="25sp"
+    android:id="@+id/img"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="25sp"
+        android:divider="@color/colorPrimary"
+        android:layout_weight="0.4"
+        android:orientation="vertical">
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FILE NAME"
+            android:id="@+id/tv1"></TextView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_height="wrap_content"
+            android:text="FILE SIZE"
+            android:id="@+id/tv2"></TextView>
+
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="100sp"
+        android:id="@+id/del"
+        android:layout_weight="0.1"
+        android:text="DELETE"></Button>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
