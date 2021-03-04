@@ -1,0 +1,78 @@
+private Executor executor = Executors.newSingleThreadExecutor();
+private void startCamera() {
+
+    final ListenableFuture<ProcessCameraProvider> cameraProviderFuture = ProcessCameraProvider.getInstance(this);
+
+    cameraProviderFuture.addListener(new Runnable() {
+        @Override
+        public void run() {
+            try {
+
+                ProcessCameraProvider cameraProvider = cameraProviderFuture.get();
+                bindPreview(cameraProvider);
+
+            } catch (ExecutionException | InterruptedException e) {
+                // No errors need to be handled for this Future.
+                // This should never be reached.
+            }
+        }
+    }, ContextCompat.getMainExecutor(this));
+}
+
+void bindPreview(@NonNull ProcessCameraProvider cameraProvider) {
+
+    Preview preview = new Preview.Builder()
+            .build();
+
+    CameraSelector cameraSelector = new CameraSelector.Builder()
+            .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+            .build();
+
+    ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
+            .build();
+
+    ImageCapture.Builder builder = new ImageCapture.Builder();
+
+    //Vendor-Extensions (The CameraX extensions dependency in build.gradle)
+    HdrImageCaptureExtender hdrImageCaptureExtender = HdrImageCaptureExtender.create(builder);
+
+    // Query if extension is available (optional).
+    if (hdrImageCaptureExtender.isExtensionAvailable(cameraSelector)) {
+        // Enable the extension if available.
+        hdrImageCaptureExtender.enableExtension(cameraSelector);
+    }
+
+    final ImageCapture imageCapture = builder
+            .setTargetRotation(this.getWindowManager().getDefaultDisplay().getRotation())
+            .build();
+preview.setSurfaceProvider(mPreviewView.createSurfaceProvider());
+    Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner)this, cameraSelector, preview, imageAnalysis, imageCapture);
+
+    
+
+    captureImage.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyyMMddHHmmss", Locale.US);
+            File file = new File(getBatchDirectoryName(), mDateFormat.format(new Date())+ ".jpg");
+
+            ImageCapture.OutputFileOptions outputFileOptions = new ImageCapture.OutputFileOptions.Builder(file).build();
+            imageCapture.takePicture(outputFileOptions, executor, new ImageCapture.OnImageSavedCallback () {
+                @Override
+                public void onImageSaved(@NonNull ImageCapture.OutputFileResults outputFileResults) {
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "Image Saved successfully", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                @Override
+                public void onError(@NonNull ImageCaptureException error) {
+                    error.printStackTrace();
+                }
+            });
+        }
+    });
+}
