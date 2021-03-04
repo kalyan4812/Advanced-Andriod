@@ -6,10 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.advancedandriod_1.ALARAM_MANAGER.Alaram;
+import com.example.advancedandriod_1.CameraX.Camerax;
+import com.example.advancedandriod_1.EXOPLAYER.Exoplayer;
+import com.example.advancedandriod_1.FIREBASE.FirebaseAuthentication;
+import com.example.advancedandriod_1.FIREBASE.FirebaseDb;
+import com.example.advancedandriod_1.GIF_ANIMATION.Image_Animation;
+import com.example.advancedandriod_1.GRAPHICS.Graphics;
 import com.example.advancedandriod_1.GoogleMaps.Googlemaps;
 import com.example.advancedandriod_1.GooglePlaces.Googleplaces;
-
-import retrofit2.Retrofit;
+import com.example.advancedandriod_1.QUIZ_APP.Quiz;
+import com.example.advancedandriod_1.RECYCLER_VIEW.Recycler;
+import com.example.advancedandriod_1.RETROFIT.RetrofitConcept;
+import com.example.advancedandriod_1.TOAST_LIBRARY.Toasty;
+import com.example.advancedandriod_1.WEATHER_APP.WeatherData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +39,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void gcm(View view) {
-        Intent i=new Intent(getApplicationContext(), Gcm.class);
-        startActivity(i);
-    }
+
 
     public void recylerview(View view) {
         Intent i=new Intent(getApplicationContext(), Recycler.class);
@@ -55,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void fcm(View view) {
-        Intent i=new Intent(getApplicationContext(), Fcm.class);
+        Intent i=new Intent(getApplicationContext(), Image_Animation.class);
         startActivity(i);
     }
 
@@ -86,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void quiz(View view) {
         Intent i=new Intent(getApplicationContext(), Quiz.class);
+        startActivity(i);
+    }
+
+    public void camerax(View view) {
+        Intent i=new Intent(getApplicationContext(), Camerax.class);
         startActivity(i);
     }
 }

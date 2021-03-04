@@ -6,10 +6,13 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -19,23 +22,23 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".QuizActivity"></activity>
-        <activity android:name=".Quiz" />
-        <activity android:name=".Alaram" />
-        <activity android:name=".RetrofitConcept" />
-        <activity android:name=".Toasty" />
-        <activity android:name=".WeatherData" />
-        <activity android:name=".Exoplayer" />
-        <activity android:name=".Fcm" />
-        <activity android:name=".FirebaseDb" />
-        <activity android:name=".Graphics" />
-        <activity android:name=".FirebaseAuthentication" />
-        <activity android:name=".Recycler" />
-        <activity android:name=".Gcm" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".CameraX.Camerax"></activity>
+        <activity android:name=".QUIZ_APP.QuizActivity" />
+        <activity android:name=".QUIZ_APP.Quiz" />
+        <activity android:name=".ALARAM_MANAGER.Alaram" />
+        <activity android:name=".RETROFIT.RetrofitConcept" />
+        <activity android:name=".TOAST_LIBRARY.Toasty" />
+        <activity android:name=".WEATHER_APP.WeatherData" />
+        <activity android:name=".EXOPLAYER.Exoplayer" />
+        <activity android:name=".GIF_ANIMATION.Image_Animation" />
+        <activity android:name=".FIREBASE.FirebaseDb" />
+        <activity android:name=".GRAPHICS.Graphics" />
+        <activity android:name=".FIREBASE.FirebaseAuthentication" />
+        <activity android:name=".RECYCLER_VIEW.Recycler" />
         <activity android:name=".GooglePlaces.Googleplaces" />
         <activity android:name=".GoogleMaps.Googlemaps" />
         <activity
@@ -61,7 +64,7 @@
             </intent-filter>
         </service>
         -->
-        <receiver android:name="com.example.advancedandriod_1.AlaramBroadcast" />
+        <receiver android:name=".ALARAM_MANAGER.AlaramBroadcast" />
     </application>
 
 </manifest>

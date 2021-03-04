@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FirebaseAuthentication">
+    tools:context=".FIREBASE.FirebaseAuthentication">
     <EditText
         android:layout_width="350dp"
         android:layout_height="50dp"

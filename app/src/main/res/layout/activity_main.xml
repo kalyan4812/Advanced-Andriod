@@ -196,7 +196,20 @@
             android:background="#000000"
             android:clickable="true"></Button>
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAMERAX"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#CC8010"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:onClick="camerax"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="#000000"
+            android:clickable="true"></Button>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
